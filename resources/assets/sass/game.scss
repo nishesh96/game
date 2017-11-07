@@ -1,0 +1,32 @@
+.game-board {
+    display: none;
+    #chip-list {
+        padding: 12px 0;
+    }
+    .chip {
+        background-color: $brand-warning;
+        border-radius: 10px;
+        margin: 5px;
+        padding: 10px 20px;
+        color: white;
+        cursor: pointer;
+        z-index: 2;
+        display: inline-block;
+    }
+    .category-section {
+        background-color: #eee;
+        min-height: 200px;
+        margin: 10px;
+        width: 48%;
+        padding: 4px;
+        display: inline-block;
+    }
+}
+
+.game-board.active {
+    display: block;
+}
+
+.h-center {
+    text-align: center;
+}
