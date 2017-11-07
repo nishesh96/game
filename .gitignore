@@ -1,2 +1,8 @@
-node_modules/
+
+/bootstrap/compiled.php
+/vendor
+/app/config/packages
+/public/packages
+/node_modules
+.env
 .DS_Store
