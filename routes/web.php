@@ -19,10 +19,7 @@ Route::get('/game', function () {
 });
 Route::resource('game_words', 'SectionWordsController');
 Route::resource('posts', 'PostController');
-Route::post('/game_submit', function (\Illuminate\Http\Request $request) {
-    // return response()->json($request);
-    return response()-> json(['message' => $request['body']]);
-});
+Route::post('/game_submit', 'SubmitController@newGame');
 Auth::routes();
 
 Route::get('lsapp/public/dashboard', 'DashboardController@index');
