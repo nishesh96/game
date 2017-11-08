@@ -59,24 +59,35 @@ $(document).ready(function () {
         });
 
     function findResult() {
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        var payload = $.extend({}, {
+            data: userInput.map(function (item) {
+                return {
+                    category1: Object.keys(item['section-1']),
+                    category2: Object.keys(item['section-2']),
+                    words: item.words,
+                    duration: item.duration
+                };
+            }),
+            _token: CSRF_TOKEN
+        });
         var config = {
-            url: '/lsapp/public/game_submit',
+            url: '/game_submit',
             type: 'POST',
-            data: JSON.stringify(userInput),
+            data: JSON.stringify(payload),
             contentType: "application/json; charset=utf-8",
-
+            dataType: 'json',
             success: function (result) {
+                console.log(result);
                 userInput = $.extend(true, {}, constUserInput);
             }
         };
-        console.log(config);
-        // console.log(userInput);
         $.ajax(config)
     };
 
     function initLevel() {
         $.ajax({
-            url: '/lsapp/public/game_words',
+            url: '/game_words',
             dataType: 'json',
             success: function (result) {
                 userInput[current].words = result;

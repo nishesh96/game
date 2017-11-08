@@ -14,7 +14,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'lsapp') }}
+                        {{ config('app.name', 'Game On') }}
                     </a>
                 </div>
 
@@ -25,8 +25,8 @@
                     </ul>
 
                     <ul class="nav navbar-nav">
-                         <li class="active"><a href="/lsapp/public/">Home</a></li>
-                         <li><a href="/lsapp/public/game">Game</a></li>
+                         <li class="active"><a href="/">Home</a></li>
+                         <li><a href="/game">Game</a></li>
 
                         </ul>
                     <!-- Right Side Of Navbar -->
